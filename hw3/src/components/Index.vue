@@ -31,12 +31,21 @@
 </template>
 
 <script>
+import router from './router'
 export default {
-  name: 'Index',
-  props: {
-    msg: String
-  }
-}
+
+        name: 'Index',
+        data () {
+            return {
+                msg: '123'
+            }
+        },
+        methods: {
+            navigate() {
+                router.push({ name: "login" });
+            }
+        }
+    }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->

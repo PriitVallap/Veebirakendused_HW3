@@ -3,6 +3,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
     <section class="login-page">
       <section id="login-container">
+        
         <div>
           <h1>Welcome to postIt!</h1>
         </div>
@@ -16,7 +17,7 @@
         </div>
         <div>
           <h3>Please Log In</h3>
-          <form>
+          <form action="index">
             <div>
               <input type="text" name="email" placeholder="Email">
             </div>
@@ -24,7 +25,9 @@
               <input type="password" name="password" placeholder="Password">
             </div>
             <div>
-              <button class="button">Log In</button>
+              <router-link to="/index">
+              <button @click="go_to_index" type="button">Log In</button>
+              </router-link>
             </div>
             <div>
               <small>
@@ -44,6 +47,12 @@ export default {
   name: 'Login',
   props: {
     msg: String
+  },
+  methods: {
+    go_to_index: function() {
+      this.$router.push("/index")
+    }
+
   }
 }
 </script>

@@ -1,18 +1,20 @@
 <template>
-  <login/>
+<div>
+  <Login/>
+<router-view></router-view>
+</div>
 </template>
 
 <script>
+import Login from './components/Login.vue'
 //import Browse from './components/Browse.vue'
 //import Index from './components/Index.vue'
-import Login from './components/Login.vue'
 
 export default {
   name: 'App',
   components: {
-    //Index,
-    //Browse
     Login
+    
   }
 }
 </script>
