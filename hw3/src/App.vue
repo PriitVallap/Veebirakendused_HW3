@@ -1,18 +1,18 @@
 <template>
-  <browse/>
+  <login/>
 </template>
 
 <script>
-import Browse from './components/Browse.vue'
+//import Browse from './components/Browse.vue'
 //import Index from './components/Index.vue'
-//import Login from './components/Login.vue'
+import Login from './components/Login.vue'
 
 export default {
   name: 'App',
   components: {
     //Index,
-    Browse
-    //Login
+    //Browse
+    Login
   }
 }
 </script>
