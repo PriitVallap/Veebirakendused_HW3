@@ -1,15 +1,39 @@
 <template>
-  <div class="hello">
-    <h1>{{ "This is the dropdown message" }}</h1>
-    
+  <div class="avatar-container">
+    <a href="#" v-on:click.prevent="showDropDown=!showDropDown">
+      <img class="avatar">
+    </a>
+    <transition name="slide-fade">
+      <div v-if="showDropDown">
+        <span v-for="l in links" class="list">
+          <div v-if=l.link.includes("user")>
+          <p class={{l.link}}}>{{l.name}}}</p>
+          </div>
+          <div v-else>
+            <a href={{l.link}}>{{l.name}}</a>
+          </div>
+        </span>
+      </div>
+    </transition>
   </div>
 </template>
 
 <script>
+import Browse from "@/components/Browse";
+import Login from "@/components/Login";
+
 export default {
   name: 'Dropdown',
-  props: {
-    msg: String
+  data() {
+    return {
+      showDropDown: false,
+      links: [
+        {link: 'user-name',name:"John Doe"},
+        {link: 'user-email',name:"e-mail"},
+        {link: Browse,name: "Browse"},
+        {link: Login,name: "Logout"}
+      ]
+    };
   }
 }
 </script>

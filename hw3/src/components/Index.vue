@@ -9,21 +9,7 @@
         <div class="search-container">
           <input type="text" name="search"><button type="button">Search</button>
         </div>
-        <div class="avatar-container">
-          <img class="avatar">
-          <div class="drop-down-container">
-            <span id="user-name">John Doe</span>
-            <span id="user-email"></span>
-            <span class="separator"></span>
-            <span>
-              <a href="Browse.Vue">Browse</a>
-            </span>
-            <span class="separator"></span>
-            <span>
-              <a href="Login.Vue">Log Out</a>
-            </span>
-          </div>
-        </div>
+        <Dropdown></Dropdown>
       </nav>
     </header>
     <section class="main-container"></section>
@@ -32,10 +18,12 @@
 
 <script>
 import router from './router'
+import Dropdown from "@/components/Dropdown";
 export default {
 
         name: 'Index',
-        data () {
+  components: {Dropdown},
+  data () {
             return {
                 msg: '123'
             }
